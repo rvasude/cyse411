@@ -1,6 +1,9 @@
-name: SAST - Semgrep
+name: SAST – Semgrep
+
 on:
   workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
   semgrep:
@@ -16,3 +19,5 @@ jobs:
           config: auto
           include: |
             fastbank-auth-lab/**
+            canonicalization-example/**
+            idor/**
